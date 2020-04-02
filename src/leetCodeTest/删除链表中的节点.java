@@ -2,6 +2,8 @@ package leetCodeTest;
 
 import util.ListNode;
 
+
+
 public class 删除链表中的节点 {
     public static void main(String[] args) {
         ListNode listNode = new ListNode(4);
