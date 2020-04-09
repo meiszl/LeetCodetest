@@ -14,7 +14,24 @@ public class test {
         test tester = new test();
         tester.sortUsingJava7(names1);
         System.out.println(names1);
-        System.out.println(5/10);
+        int mid = (1 + 1) >>> 1;
+        System.out.println(mid);
+        int left = 0,right = 5;
+        int[] a = new int[]{2,6,5,4,3,1};
+//        //插入排序简化版
+//        for (int i = left, j = i; i < right; j = ++i) {
+//            int ai = a[i + 1];
+//            while (ai < a[j]) {
+//                a[j + 1] = a[j];
+//                System.out.println("Arrays.toString(a) = " + Arrays.toString(a));
+//                if (j-- == left) {
+//                    break;
+//                }
+//            }
+//            a[j + 1] = ai;
+//            System.out.println("Arrays.toString(a) = " + Arrays.toString(a));
+//            System.out.println();
+//        }
     }
     private void sortUsingJava7(List<String> names){
         Collections.sort(names, new Comparator<String>() {
