@@ -1,5 +1,7 @@
 package leetCodeTest;
 
+import java.util.Arrays;
+
 public class 最长回文子串 {
     public static void main(String[] args) {
         String s = "babad";
@@ -60,7 +62,9 @@ public class 最长回文子串 {
                 }
 
             }
-
+        }
+        for (int i = 0; i < dp.length; i++) {
+            System.out.println("Arrays.toString(dp[i]) = " + Arrays.toString(dp[i]));
         }
         return s.substring(maxStart, maxEnd + 1);
 
