@@ -4,7 +4,7 @@ import java.util.*;
 
 public class test {
     public static void main(String[] args) {
-        HashMap<String,String> map = new HashMap();
+//        HashMap<String,String> map = new HashMap();
 //        List<String> names1 = new ArrayList<String>();
 //        names1.add("Google ");
 //        names1.add("Runoob ");
@@ -50,6 +50,8 @@ public class test {
 //        }
 //        String s = "321321321";
 //        System.out.println(s.substring(3));
+        int[] a= {7};
+        System.out.println(Arrays.toString(Arrays.copyOfRange(a,1,1)));
     }
     private void sortUsingJava7(List<String> names){
         Collections.sort(names, new Comparator<String>() {
