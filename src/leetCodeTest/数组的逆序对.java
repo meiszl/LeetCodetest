@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class 数组的逆序对 {
     public static void main(String[] args) {
         int[] nums = new int[]{1,3,2,3,1};
-        int i = InversePairs(nums);
+        int i = reversePairs(nums);
         System.out.println("i = " + i);
     }
 
