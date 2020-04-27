@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class 数组的逆序对 {
     public static void main(String[] args) {
-        int[] nums = new int[]{1,3,2,3,1};
+        int[] nums = new int[]{0,2,1};
         int i = reversePairs(nums);
         System.out.println("i = " + i);
     }
 
     /**
-     * 剑指offer原方法，归并排序，出错
+     * 剑指offer原方法，归并排序
      */
     private static int count = 0;
     public static int reversePairs(int[] nums) {
