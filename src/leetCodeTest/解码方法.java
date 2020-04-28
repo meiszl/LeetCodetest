@@ -1,41 +1,35 @@
 package leetCodeTest;
 
 
+import java.util.Arrays;
+
 public class 解码方法 {
     public static void main(String[] args) {
-        String s = "01";
+        String s = "110";
         int i = numDecodings(s);
         System.out.println("i = " + i);
     }
     public static int numDecodings(String s) {
-        if(s.length() == 1) return s.charAt(0) == '0'?0:1;
+        if (s.charAt(0) == '0') return 0;
         char[] sc = s.toCharArray();
-        int[] sum = new int[s.length()];
+        int[] sum = new int[s.length() + 1];
         sum[0] = 1;
-        for (int i = 1; i < sc.length; i++) {
-            if (sc[i] == '0'){
-                if (sc[i-1] == '0')
-                    sum[i] = sum[i-1] - 1;
-//                else if (sc[i-1] <= '2')
-//                    sum[i] = sum[i-1] + 1;
-                else
-                    sum[i] = sum[i-1];
-            }else if (sc[i] <= '6'){
-                if (sc[i-1] == '0')
-                    sum[i] = sum[i-1] - 1;
-                else if (sc[i-1] <= '2')
-                    sum[i] = sum[i-1]+1;
-                else
-                    sum[i] = sum[i-1];
+        sum[1] = 1;
+        for (int i = 2; i <= sc.length; i++) {
+            int n = (sc[i - 2] - '0') * 10 + (sc[i - 1] - '0');
+            if (sc[i - 1] == '0' && sc[i-2]=='0')
+                return 0;
+            if (sc[i - 1] == '0'){
+                if (n>26) return 0;
+                sum[i] = sum[i-2];
+            }else if (sc[i-2] == '0'){
+                sum[i] = sum[i-1];
+            }else if (n>26){
+                sum[i] = sum[i-1];
             }else {
-                if (sc[i-1] == '0')
-                    sum[i] = sum[i-1] - 1;
-                else if (sc[i-1] == '1')
-                    sum[i] = sum[i-1] + 1;
-                else
-                    sum[i] = sum[i-1];
+                sum[i] = sum[i-1] + sum[i-2];
             }
         }
-        return sum[s.length()-1];
+        return sum[s.length()];
     }
 }
