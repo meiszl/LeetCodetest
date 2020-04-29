@@ -38,6 +38,28 @@ public class 两数相除 {
      * @return
      */
     public static int divide(int dividend, int divisor) {
-        return 0;
+        Boolean sign = (dividend >0)^(divisor>0);
+        if (dividend>0)
+            dividend = -dividend;
+        if (divisor > 0){
+            divisor = - divisor;
+        }
+        int res = 0;
+        while (dividend <= divisor){
+            int temdivsor = divisor;
+            int temres = -1;
+            while (dividend <= (temdivsor << 1)){
+                if (temdivsor <= (Integer.MIN_VALUE >> 1)) break;
+                temdivsor = temdivsor << 1;
+                temres = temres << 1;
+            }
+            dividend = dividend - temdivsor;
+            res += temres;
+        }
+        if (!sign){
+            if (res <= Integer.MIN_VALUE) return Integer.MAX_VALUE;
+            res = -res;
+        }
+        return res;
     }
 }

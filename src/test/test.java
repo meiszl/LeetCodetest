@@ -50,8 +50,14 @@ public class test {
 //        }
 //        String s = "321321321";
 //        System.out.println(s.substring(3));
-        int[] a= {7};
-        System.out.println(Arrays.toString(Arrays.copyOfRange(a,1,1)));
+//        int[] a= {7};
+//        System.out.println(Arrays.toString(Arrays.copyOfRange(a,1,1)));
+        Queue<Integer> queue = new PriorityQueue<>(((o1, o2) -> o2 - o1));
+        queue.add(-2);
+        queue.add(-1);
+        queue.add(-3);
+        System.out.println("queue = " + queue);
+        System.out.println("queue.poll() = " + queue.poll());
     }
     private void sortUsingJava7(List<String> names){
         Collections.sort(names, new Comparator<String>() {
