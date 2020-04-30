@@ -7,7 +7,7 @@ public class 两数相除 {
         System.out.println("divide = " + divide);
     }
 
-    /** TODO 除法问题，待解决
+    /**
      * 传统减法，超时。
      * @param dividend
      * @param divisor

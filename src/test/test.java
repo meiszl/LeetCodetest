@@ -52,12 +52,28 @@ public class test {
 //        System.out.println(s.substring(3));
 //        int[] a= {7};
 //        System.out.println(Arrays.toString(Arrays.copyOfRange(a,1,1)));
-        Queue<Integer> queue = new PriorityQueue<>(((o1, o2) -> o2 - o1));
-        queue.add(-2);
-        queue.add(-1);
-        queue.add(-3);
-        System.out.println("queue = " + queue);
-        System.out.println("queue.poll() = " + queue.poll());
+//        Queue<Integer> queue = new PriorityQueue<>(((o1, o2) -> o2 - o1));
+//        queue.add(-2);
+//        queue.add(-1);
+//        queue.add(-3);
+//        System.out.println("queue = " + queue);
+//        System.out.println("queue.poll() = " + queue.poll());
+//        String str = "anusyb";
+//        char[] chars = str.toCharArray();
+//        Character[] characters = new Character[chars.length];
+//        for (int i = 0; i < chars.length; i++) {
+//            characters[i] = chars[i];
+//        }
+//        //重写排序比较方法的时候不能使用基础数据类型。
+//        Arrays.sort(chars);
+//        System.out.println(Arrays.toString(chars));
+        List<Integer> list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(10);
+        System.out.println("list.remove(Integer.valueOf(10)) = " + list.remove(Integer.valueOf(10)));
+        System.out.println("list = " + list);
     }
     private void sortUsingJava7(List<String> names){
         Collections.sort(names, new Comparator<String>() {
