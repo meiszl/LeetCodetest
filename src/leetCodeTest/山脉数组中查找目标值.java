@@ -13,7 +13,6 @@ public class 山脉数组中查找目标值 {
     }
 
     /**
-     * TODO 山脉数组中查找目标值
      * 三次二分查找，首先找到中间位置，然后将数组分成两半分别进行二分查找。
      * @param target
      * @param mountainArr
