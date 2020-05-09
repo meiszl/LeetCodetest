@@ -1,5 +1,10 @@
 package test;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
+import java.io.*;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class test {
@@ -67,13 +72,10 @@ public class test {
 //        //重写排序比较方法的时候不能使用基础数据类型。
 //        Arrays.sort(chars);
 //        System.out.println(Arrays.toString(chars));
-        List<Integer> list = new ArrayList();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(10);
-        System.out.println("list.remove(Integer.valueOf(10)) = " + list.remove(Integer.valueOf(10)));
-        System.out.println("list = " + list);
+//        DecimalFormat decimalFormat = new DecimalFormat("0.00");
+//        System.out.println("3.0/6.0 = " + decimalFormat.format(200.0 / 6.0));
+        //1,5,8,9,10,12,13,16,17,18,19,20,23,24,29
+        //3,12,54
     }
     private void sortUsingJava7(List<String> names){
         Collections.sort(names, new Comparator<String>() {
