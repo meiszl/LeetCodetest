@@ -76,6 +76,7 @@ public class test {
 //        System.out.println("3.0/6.0 = " + decimalFormat.format(200.0 / 6.0));
         //1,5,8,9,10,12,13,16,17,18,19,20,23,24,29
         //3,12,54
+        List<Integer> list = new ArrayList<>();
     }
     private void sortUsingJava7(List<String> names){
         Collections.sort(names, new Comparator<String>() {

@@ -2,8 +2,8 @@ package leetCodeTest;
 
 public class Pow_x_n {
     public static void main(String[] args) {
-        double x = 2.1;
-        int n = 3;
+        double x = 2;
+        int n = 4;
         double v = myPow(x, n);
         System.out.println("v = " + v);
     }
