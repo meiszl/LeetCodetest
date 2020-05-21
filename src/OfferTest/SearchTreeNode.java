@@ -51,43 +51,43 @@ public class SearchTreeNode {
      * @param treeNode
      * @return
      */
-//    public static List<Integer> searchZTreeNode(TreeNode treeNode){
-//        List<Integer> list = new ArrayList();
-//        if (treeNode != null){
-//            Map<TreeNode,Integer> map = new HashMap();
-//            Queue<TreeNode> queue = new LinkedList();
-//            Stack<TreeNode> stack = new Stack();
-//            queue.offer(treeNode);
-//            map.put(treeNode,0);
-//            TreeNode temp;
-//            while (!queue.isEmpty() || !stack.isEmpty()){
-//                if (queue.isEmpty()) {
-//                    temp = stack.pop();
-//                }else {
-//                    temp = queue.poll();
-//                }
-//                list.add(temp.val);
-//                int i = map.get(temp) + 1;
-//                if (temp.left != null){
-//                    if (i%2 != 0){
-//                        queue.offer(temp.left);
-//                    }else {
-//                        stack.push(temp.left);
-//                    }
-//                    map.put(temp.left,i);
-//                }
-//                if (temp.right != null){
-//                    if (i%2 != 0){
-//                        queue.offer(temp.right);
-//                    }else {
-//                        stack.push(temp.right);
-//                    }
-//                    map.put(temp.right,i);
-//                }
-//            }
-//        }
-//        return list;
-//    }
+    public static List<Integer> searchZTreeNode(TreeNode treeNode){
+        List<Integer> list = new ArrayList();
+        if (treeNode != null){
+            Map<TreeNode,Integer> map = new HashMap();
+            Queue<TreeNode> queue = new LinkedList();
+            Stack<TreeNode> stack = new Stack();
+            queue.offer(treeNode);
+            map.put(treeNode,0);
+            TreeNode temp;
+            while (!queue.isEmpty() || !stack.isEmpty()){
+                if (queue.isEmpty()) {
+                    temp = stack.pop();
+                }else {
+                    temp = queue.poll();
+                }
+                list.add(temp.val);
+                int i = map.get(temp) + 1;
+                if (temp.left != null){
+                    if (i%2 != 0){
+                        queue.offer(temp.left);
+                    }else {
+                        stack.push(temp.left);
+                    }
+                    map.put(temp.left,i);
+                }
+                if (temp.right != null){
+                    if (i%2 != 0){
+                        queue.offer(temp.right);
+                    }else {
+                        stack.push(temp.right);
+                    }
+                    map.put(temp.right,i);
+                }
+            }
+        }
+        return list;
+    }
 
     /**
      * 二叉树的Z字形遍历，使用栈数据结构。

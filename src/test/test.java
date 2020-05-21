@@ -1,5 +1,7 @@
 package test;
 
+import util.TreeNode;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
@@ -76,7 +78,11 @@ public class test {
 //        System.out.println("3.0/6.0 = " + decimalFormat.format(200.0 / 6.0));
         //1,5,8,9,10,12,13,16,17,18,19,20,23,24,29
         //3,12,54
-        List<Integer> list = new ArrayList<>();
+//        List<Integer> list = new ArrayList<>();
+//        TreeNode treeNode = new TreeNode(0);
+//        int i = treeNode.hashCode();
+//        System.out.println("i = " + i);
+        System.out.println(Character.toChars('a' + 26 - 1));
     }
     private void sortUsingJava7(List<String> names){
         Collections.sort(names, new Comparator<String>() {
