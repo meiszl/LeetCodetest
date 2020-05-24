@@ -82,7 +82,17 @@ public class test {
 //        TreeNode treeNode = new TreeNode(0);
 //        int i = treeNode.hashCode();
 //        System.out.println("i = " + i);
-        System.out.println(Character.toChars('a' + 26 - 1));
+//        priorityQueue1.add(6);
+//        System.out.println((priorityQueue.peek() + priorityQueue1.peek()) / 2);
+        int ones = 0, twos = 0;
+        int[] nums = new int[]{3,3,1,3};
+        for (int num : nums) {
+            ones = ones ^ num & ~twos;
+            twos = twos ^ num & ~ones;
+            System.out.println("ones = " + ones);
+            System.out.println("twos = " + twos);
+        }
+
     }
     private void sortUsingJava7(List<String> names){
         Collections.sort(names, new Comparator<String>() {
