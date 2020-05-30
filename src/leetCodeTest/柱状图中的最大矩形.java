@@ -53,36 +53,36 @@ public class 柱状图中的最大矩形 {
      * @param heights
      * @return
      */
-//    public static int largestRectangleArea(int[] heights) {
-//        int maxarea = 0;
-//        for (int i = 0; i < heights.length; i++) {
-//            int minheight = Integer.MAX_VALUE;
-//            for (int j = i; j < heights.length; j++) {
-//                minheight = Math.min(minheight, heights[j]);
-//                maxarea = Math.max(maxarea, minheight * (j - i + 1));
-//            }
-//        }
-//        return maxarea;
-//    }
+    public static int largestRectangleArea(int[] heights) {
+        int maxarea = 0;
+        for (int i = 0; i < heights.length; i++) {
+            int minheight = Integer.MAX_VALUE;
+            for (int j = i; j < heights.length; j++) {
+                minheight = Math.min(minheight, heights[j]);
+                maxarea = Math.max(maxarea, minheight * (j - i + 1));
+            }
+        }
+        return maxarea;
+    }
 
     /**
      * 单调栈方法
      * 详解：https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode/
      */
-    public static int largestRectangleArea(int[] heights) {
-        Stack<Integer> stack = new Stack<>();
-        stack.push(-1);
-        int MaxArea = 0;
-        for (int i = 0; i < heights.length; i++) {
-            while (stack.peek() != -1&&heights[stack.peek()] >= heights[i])
-                MaxArea = Math.max(MaxArea,heights[stack.pop()]*(i-1-stack.peek()));
-            stack.push(i);
-        }
-        while (stack.peek() != -1){
-            MaxArea = Math.max(MaxArea,heights[stack.pop()] * (heights.length - 1 - stack.peek()));
-        }
-        return MaxArea;
-    }
+//    public static int largestRectangleArea(int[] heights) {
+//        Stack<Integer> stack = new Stack<>();
+//        stack.push(-1);
+//        int MaxArea = 0;
+//        for (int i = 0; i < heights.length; i++) {
+//            while (stack.peek() != -1&&heights[stack.peek()] >= heights[i])
+//                MaxArea = Math.max(MaxArea,heights[stack.pop()]*(i-1-stack.peek()));
+//            stack.push(i);
+//        }
+//        while (stack.peek() != -1){
+//            MaxArea = Math.max(MaxArea,heights[stack.pop()] * (heights.length - 1 - stack.peek()));
+//        }
+//        return MaxArea;
+//    }
 
 }
 
