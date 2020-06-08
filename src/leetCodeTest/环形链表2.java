@@ -9,31 +9,50 @@ public class 环形链表2 {
      * @param head
      * @return
      */
+//    public ListNode detectCycle(ListNode head) {
+//        ListNode first = head;
+//        ListNode second = cycle(head);
+//        if(second == null)
+//            return null;
+//        while(first != second){
+//            first = first.next;
+//            second = second.next;
+//        }
+//        return second;
+//    }
+//    public ListNode cycle(ListNode head){
+//        ListNode tortoise = head;
+//        ListNode hare = head;
+//
+//        // A fast pointer will either loop around a cycle and meet the slow
+//        // pointer or reach the `null` at the end of a non-cyclic list.
+//        while (hare != null && hare.next != null) {
+//            tortoise = tortoise.next;
+//            hare = hare.next.next;
+//            if (tortoise == hare) {
+//                return tortoise;
+//            }
+//        }
+//
+//        return null;
+//    }
     public ListNode detectCycle(ListNode head) {
-        ListNode first = head;
-        ListNode second = cycle(head);
-        if(second == null)
+        if (head == null || head.next == null)
             return null;
-        while(first != second){
+        ListNode first = head;
+        ListNode second = head;
+        while (second != null&& second.next != null){
             first = first.next;
-            second = second.next;
-        }
-        return second;
-    }
-    public ListNode cycle(ListNode head){
-        ListNode tortoise = head;
-        ListNode hare = head;
-
-        // A fast pointer will either loop around a cycle and meet the slow
-        // pointer or reach the `null` at the end of a non-cyclic list.
-        while (hare != null && hare.next != null) {
-            tortoise = tortoise.next;
-            hare = hare.next.next;
-            if (tortoise == hare) {
-                return tortoise;
+            second = second.next.next;
+            if (first == second){
+                first = head;
+                while (first != second){
+                    first = first.next;
+                    second = second.next;
+                }
+                return second;
             }
         }
-
         return null;
     }
 }
