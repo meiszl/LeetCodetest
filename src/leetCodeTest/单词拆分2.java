@@ -21,11 +21,9 @@ public class 单词拆分2 {
      */
     private static HashSet<String> hashSet;
     private static HashMap<Integer,List<String>> hashMap;
-    private static List<String> res;
     public static List<String> wordBreak(String s, List<String> wordDict) {
         hashSet = new HashSet<>(wordDict);
         hashMap = new HashMap<>();
-        res = new ArrayList<>();
         return find(s, 0);
     }
     public static List<String> find(String s,int start){
