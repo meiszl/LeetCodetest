@@ -2,7 +2,6 @@ package test;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class find {
     public static void main(String[] args) {
         List<List<Integer>> res = res(11);

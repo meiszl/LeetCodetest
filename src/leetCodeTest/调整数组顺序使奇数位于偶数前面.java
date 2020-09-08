@@ -25,7 +25,14 @@ public class 调整数组顺序使奇数位于偶数前面 {
         System.out.println("b = " + b);
         int[] ints = a.stream().mapToInt(Integer::intValue).toArray();
         int[] ints1 = b.stream().mapToInt(Integer::intValue).toArray();
-        System.arraycopy(ints1,0,array,0,ints.length);
-        System.arraycopy(ints,0,array,ints.length,ints1.length);
+        int[] res = new int[a.size() + b.size()];
+        for (int i = 0; i < b.size(); i++) {
+            res[i] = b.get(i);
+        }
+        for (int i = 0; i < a.size(); i++) {
+            res[i + b.size()] = a.get(i);
+        }
+//        System.arraycopy(ints1,0,array,0,ints1.length);
+//        System.arraycopy(ints,ints1.length-1,array,array.length-1,ints.length);
     }
 }

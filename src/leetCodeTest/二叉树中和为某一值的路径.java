@@ -1,8 +1,5 @@
 package leetCodeTest;
 
-import util.TreeNode;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,7 +15,11 @@ public class 二叉树中和为某一值的路径 {
         treeNode.left.left.right = new TreeNode(2);
         treeNode.right.right.left = new TreeNode(5);
         treeNode.right.right.right = new TreeNode(1);
-        List<List<Integer>> lists = pathSum(treeNode, 5);
+        treeNode.left.left.left.left = new TreeNode(8);
+        treeNode.left.left.right.left = new TreeNode(7);
+        treeNode.left.left.right.right = new TreeNode(10);
+        treeNode.right.right.left.left = new TreeNode(6);
+        List<List<Integer>> lists = pathSum(treeNode, 35);
         System.out.println("lists = " + lists);
     }
     private static LinkedList<List<Integer>> lists;
@@ -40,5 +41,24 @@ public class 二叉树中和为某一值的路径 {
         dfs(root.left, k);
         dfs(root.right, k);
         res.removeLast();
+    }
+}
+class TreeNode {
+
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode next;
+    public TreeNode(int x){
+        val = x;
+    }
+    public void printTree(TreeNode treeNode){
+        System.out.println(treeNode.val);
+        if (treeNode.left != null){
+            printTree(treeNode.left);
+        }
+        if (treeNode.right != null){
+            printTree(treeNode.right);
+        }
     }
 }
